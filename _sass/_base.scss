@@ -1,206 +1,168 @@
-/**
- * Reset some basic elements
- */
-body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
-dl, dd, ol, ul, figure {
-    margin: 0;
-    padding: 0;
+ body, h1, h2, h3, h4, h5, h6,
+ p, blockquote, pre, hr,
+ dl, dd, ol, ul, figure {
+  margin: 0;
+  padding: 0;
 }
 
-
-
-/**
- * Basic styling
- */
 body {
-    font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
-    color: $text-color;
-    background-color: $background-color;
-    -webkit-text-size-adjust: 100%;
-    -webkit-font-feature-settings: "kern" 1;
-    -moz-font-feature-settings: "kern" 1;
-    -o-font-feature-settings: "kern" 1;
-    font-feature-settings: "kern" 1;
-    font-kerning: normal;
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  color: $copy-color;
 }
 
-
-
-/**
- * Set `margin-bottom` to maintain vertical rhythm
- */
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-ul, ol, dl, figure,
-%vertical-rhythm {
-    margin-bottom: $spacing-unit / 2;
-}
-
-
-
-/**
- * Images
- */
-img {
-    max-width: 100%;
-    vertical-align: middle;
-}
-
-
-
-/**
- * Figures
- */
-figure > img {
-    display: block;
-}
-
-figcaption {
-    font-size: $small-font-size;
-}
-
-
-
-/**
- * Lists
- */
-ul, ol {
-    margin-left: $spacing-unit;
-}
-
-li {
-    > ul,
-    > ol {
-         margin-bottom: 0;
-    }
-}
-
-
-
-/**
- * Headings
- */
 h1, h2, h3, h4, h5, h6 {
+  font-weight: $mid-font-weight;
+  margin-bottom: $spacing-unit;
+  &.light {
     font-weight: $base-font-weight;
+  }
+  &.heavy {
+    font-weight: $heavy-font-weight;
+  }
 }
 
-
-
-/**
- * Links
- */
 a {
-    color: $brand-color;
-    text-decoration: none;
-
-    &:visited {
-        color: darken($brand-color, 15%);
-    }
-
-    &:hover {
-        color: $text-color;
-        text-decoration: underline;
-    }
+  color: $link-color;
+  &:active, &.active {
+    color: darken($link-color, 10%);
+    text-decoration: underline;
+  }
+  &:hover, &.hover {
+    color: lighten($link-color, 20%);
+    text-decoration: underline;
+  }
 }
 
+p {
+  margin-bottom: $spacing-unit;
+}
 
+strong {
+  font-weight: $mid-font-weight;
+}
 
-/**
- * Blockquotes
- */
-blockquote {
-    color: $grey-color;
-    border-left: 4px solid $grey-color-light;
-    padding-left: $spacing-unit / 2;
-    font-size: 18px;
-    letter-spacing: -1px;
-    font-style: italic;
+.btn-default {
+  @include button($link-color, white)
+}
 
-    > :last-child {
-        margin-bottom: 0;
+.btn-secondary {
+  @include button($secondary-button-color-dark, white)
+}
+
+.btn-secondary-light {
+  @include button($secondary-button-color-light, darken($link-color, 10%))
+}
+
+.btn-secondary-extra-light {
+  @include button(white, darken($link-color, 10%))
+}
+
+.btn-disabled {
+  color: lighten($copy-color, 10%);
+}
+
+.panel {
+  border-bottom: 0;
+  .panel-heading {
+    color: $heading-block-color;
+    h1, h2, h3, h4, h5, h6 {
+      display: inline;
     }
-}
-
-
-
-/**
- * Code formatting
- */
-pre,
-code {
-    font-size: 15px;
-    border: 1px solid $grey-color-light;
-    border-radius: 3px;
-    background-color: #eef;
-}
-
-code {
-    padding: 1px 5px;
-}
-
-pre {
-    padding: 8px 12px;
-    overflow-x: auto;
-
-    > code {
-        border: 0;
-        padding-right: 0;
-        padding-left: 0;
+    a {
+      color: lighten($copy-color, 30%);
     }
+  }
 }
 
-
-
-/**
- * Wrapper
- */
-.wrapper {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
-    @extend %clearfix;
-
-    @include media-query($on-laptop) {
-        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-        padding-right: $spacing-unit / 2;
-        padding-left: $spacing-unit / 2;
+.subtle {
+  color: lighten($copy-color, 30%);
+  a {
+    color: darken($link-color, 10%);
+    &:active, &.active {
+      color: darken($link-color, 20%);
+      text-decoration: underline;
     }
+    &:hover, &.hover, &.active:hover {
+      color: lighten($link-color, 20%);
+      text-decoration: underline;
+    }
+  }
 }
 
-
-
-/**
- * Clearfix
- */
-%clearfix {
-
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+.dropdown-menu {
+  top: auto;
 }
 
+.btn-group {
+  .btn-default {
+    background: white;
+    color: $copy-color;
+    border: 1px solid darken($secondary-button-color-light, 20%);
+    font-weight: $mid-font-weight;
+  }
+  .btn-secondary {
+    border-width: 1px;
+  }
+  .btn:disabled {
+    color: $copy-color;
+    border: 1px solid darken($secondary-button-color-light, 30%);
+  }
+  .btn:first-of-type {
+    border-right: 0;
+  }
+  .btn:last-of-type {
+    border-left: 0;
+  }
+}
 
-
-/**
- * Icons
- */
-.icon {
-
-    > svg {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        vertical-align: middle;
-
-        path {
-            fill: $grey-color;
-        }
+.form-group {
+  &.has-focus input {
+    border: 2px solid $link-color;
+  }
+  &.has-warning {
+    input {
+      border: 2px solid $validation-color;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
     }
+    span {
+      background: $validation-color;
+      color: white;
+      margin-top: 0;
+      padding: 2px 0px 2px 8px;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+  }
+}
+
+// Style guide helper classes
+.background-gray {
+  background: $secondary-button-color-light;
+}
+
+.heading {
+  display: block;
+  padding: 20px 10px;
+  &.default {
+    background: $heading-block-color;
+  }
+  &.primary {
+    background: $primary-button-color;
+  }
+  &.dark {
+    background: $secondary-button-color-dark;
+  }
+  &.light {
+    background: $secondary-button-color-light;
+  }
+  &.link {
+    background: $link-color;
+  }
+  &.copy {
+    background: $copy-color;
+  }
+  &.highlight {
+    background: $highlight-color;
+  }
 }

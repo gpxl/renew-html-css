@@ -3,51 +3,48 @@
 ---
 @charset "utf-8";
 
-
-
-// Our variables
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+// Fonts
+$base-font-family: 'Open Sans', sans-serif;
 $base-font-size:   16px;
 $base-font-weight: 400;
-$small-font-size:  $base-font-size * 0.875;
+$mid-font-weight:  $base-font-weight * 1.5;
+$heavy-font-weight:  $mid-font-weight + 100;
 $base-line-height: 1.5;
 
-$spacing-unit:     30px;
+// Colors
+$heading-block-color: #205e39;
+$primary-button-color: #3fae2a;
+$secondary-button-color-dark: #5e9e95;
+$secondary-button-color-light: #f2f4f4;
+$link-color: #0b9947;
+$copy-color: #4d605a;
+$highlight-color: #009687;
+$validation-color: #ca611e;
 
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+//Layout
+$spacing-unit: 20px;
 
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
-// Width of the content area
-$content-width:    800px;
-
-$on-palm:          600px;
-$on-laptop:        800px;
-
-
-
-// Use media queries like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
+@mixin button($background-color, $text-color) {
+  background: $background-color;
+  color: $text-color;
+  border-width: 0;
+  border-bottom: 2px solid darken($background-color, 10%);
+  &:active, &.active {
+    background: darken($background-color, 10%);
+    border-bottom: 2px solid darken($background-color, 10%);
+    color: $text-color;
+    text-decoration: none;
+    box-shadow: none;
+  }
+  &:hover, &.hover, &.active:hover {
+    background: lighten($background-color, 10%);
+    border-bottom: 2px solid $background-color;
+    color: $text-color;
+    text-decoration: none;
+  }
 }
-
-
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "base",
-        "layout",
-        "syntax-highlighting"
+  "base"
 ;
