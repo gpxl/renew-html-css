@@ -1,0 +1,33 @@
+.background-gray {
+  background: $secondary-button-color-light;
+}
+
+.add-margin {
+  margin-bottom: $spacing-unit;
+}
+
+.heading {
+  display: block;
+  padding: 20px 10px;
+  &.default {
+    background: $heading-block-color;
+  }
+  &.primary {
+    background: $primary-button-color;
+  }
+  &.dark {
+    background: $secondary-button-color-dark;
+  }
+  &.light {
+    background: $secondary-button-color-light;
+  }
+  &.link {
+    background: $link-color;
+  }
+  &.copy {
+    background: $copy-color;
+  }
+  &.highlight {
+    background: $highlight-color;
+  }
+}

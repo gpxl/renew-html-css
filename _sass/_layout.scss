@@ -1,0 +1,38 @@
+.section-header {
+  margin-top: ($spacing-unit * 2);
+}
+
+.panel {
+  border-bottom: 0;
+  .panel-heading {
+    color: $heading-block-color;
+    h1, h2, h3, h4, h5, h6 {
+      display: inline;
+    }
+    a {
+      color: lighten($copy-color, 30%);
+    }
+  }
+  &.panel-app {
+    border-radius: 0;
+    border: 0;
+    .panel-heading, .panel-body {
+      border-radius: 0;
+      border: 0;
+    }
+    &> .panel-heading {
+      background: $heading-block-color;
+      color: white;
+    }
+    .panel-default {
+      border-radius: 0;
+      border: 0;
+      .panel-heading {
+        background: darken($secondary-button-color-light, 10%);
+      }
+      .panel-body {
+        background: darken($secondary-button-color-light, 5%);
+      }
+    }
+  }
+}

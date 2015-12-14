@@ -1,0 +1,19 @@
+@mixin button($background-color, $hover-color, $text-color) {
+  background: $background-color;
+  color: $text-color;
+  border-width: 0;
+  border-bottom: 2px solid darken($background-color, 10%);
+  &:active, &.active {
+    background: darken($background-color, 10%);
+    border-bottom: 2px solid darken($background-color, 10%);
+    color: $text-color;
+    text-decoration: none;
+    box-shadow: none;
+  }
+  &:hover, &.hover, &.active:hover {
+    background: $hover-color;
+    border-bottom: 2px solid darken($background-color, 10%);
+    color: $text-color;
+    text-decoration: none;
+  }
+}

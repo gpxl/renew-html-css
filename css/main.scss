@@ -15,36 +15,23 @@ $base-line-height: 1.5;
 $heading-block-color: #205e39;
 $primary-button-color: #3fae2a;
 $secondary-button-color-dark: #5e9e95;
+$secondary-button-color-dark-hover: #36ad96;
 $secondary-button-color-light: #f2f4f4;
+$secondary-button-color-light-hover: #d0e2d9;
 $link-color: #0b9947;
 $copy-color: #4d605a;
 $highlight-color: #009687;
 $validation-color: #ca611e;
 
 //Layout
-$spacing-unit: 20px;
-
-@mixin button($background-color, $text-color) {
-  background: $background-color;
-  color: $text-color;
-  border-width: 0;
-  border-bottom: 2px solid darken($background-color, 10%);
-  &:active, &.active {
-    background: darken($background-color, 10%);
-    border-bottom: 2px solid darken($background-color, 10%);
-    color: $text-color;
-    text-decoration: none;
-    box-shadow: none;
-  }
-  &:hover, &.hover, &.active:hover {
-    background: lighten($background-color, 10%);
-    border-bottom: 2px solid $background-color;
-    color: $text-color;
-    text-decoration: none;
-  }
-}
+$spacing-unit: 10px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-  "base"
+  "mixins",
+  "base",
+  "layout",
+  "forms",
+  "buttons",
+  "guide-helpers"
 ;

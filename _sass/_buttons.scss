@@ -1,0 +1,19 @@
+.btn-default {
+  @include button($link-color, lighten($link-color, 10%), white)
+}
+
+.btn-secondary {
+  @include button($secondary-button-color-dark, $secondary-button-color-dark-hover, white)
+}
+
+.btn-secondary-light {
+  @include button($secondary-button-color-light, $secondary-button-color-light-hover, darken($link-color, 10%))
+}
+
+.btn-secondary-extra-light {
+  @include button(white, white, darken($link-color, 10%))
+}
+
+.btn-disabled {
+  color: lighten($copy-color, 10%);
+}
