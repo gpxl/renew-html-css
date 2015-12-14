@@ -5,15 +5,15 @@
   border-bottom: 2px solid darken($background-color, 10%);
   &:active, &.active {
     background: darken($background-color, 10%);
-    border-bottom: 2px solid darken($background-color, 10%);
     color: $text-color;
+    border-bottom: 2px solid darken($background-color, 10%);
     text-decoration: none;
     box-shadow: none;
   }
   &:hover, &.hover, &.active:hover {
-    background: $hover-color;
-    border-bottom: 2px solid darken($background-color, 10%);
-    color: $text-color;
     text-decoration: none;
+    background: $hover-color;
+    color: $text-color;
+    border-bottom: 2px solid darken($background-color, 10%);
   }
 }

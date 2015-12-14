@@ -11,8 +11,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: $mid-font-weight;
   margin-bottom: $spacing-unit;
+  font-weight: $mid-font-weight;
   &.light, span {
     font-weight: $base-font-weight;
   }
@@ -24,12 +24,14 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: $link-color;
   &:active, &.active {
-    color: darken($link-color, 10%);
     text-decoration: underline;
+    color: darken($link-color, 10%);
+
   }
   &:hover, &.hover {
-    color: lighten($link-color, 20%);
     text-decoration: underline;
+    color: lighten($link-color, 20%);
+
   }
 }
 
@@ -55,12 +57,13 @@ strong {
   a {
     color: darken($link-color, 10%);
     &:active, &.active {
-      color: darken($link-color, 20%);
       text-decoration: underline;
+      color: darken($link-color, 20%);
     }
     &:hover, &.hover, &.active:hover {
-      color: lighten($link-color, 20%);
       text-decoration: underline;
+      color: lighten($link-color, 20%);
+
     }
   }
 }

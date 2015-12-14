@@ -3,6 +3,9 @@
 ---
 @charset "utf-8";
 
+//Layout
+$spacing-unit: 10px;
+
 // Fonts
 $base-font-family: 'Open Sans', sans-serif;
 $base-font-size:   16px;
@@ -22,9 +25,6 @@ $link-color: #0b9947;
 $copy-color: #4d605a;
 $highlight-color: #009687;
 $validation-color: #ca611e;
-
-//Layout
-$spacing-unit: 10px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
