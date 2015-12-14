@@ -1,11 +1,11 @@
 .btn-group {
-  .btn-default {
+  .btn-default, .btn-default:hover {
     background: white;
     color: $copy-color;
     border: 1px solid darken($secondary-button-color-light, 20%);
     font-weight: $mid-font-weight;
   }
-  .btn-secondary {
+  .btn-secondary, .btn-secondary:hover {
     border-width: 1px;
   }
   .btn:disabled {
