@@ -8,7 +8,7 @@
 # Site settings
 title: ''
 description: ''
-baseurl: 'renew-html-css'
+baseurl: '/renew-html-css'
 url: ''
 
 # Build settings
